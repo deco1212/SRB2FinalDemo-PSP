@@ -1,8 +1,8 @@
-# Sonic Robo Blast 2 Final Demo v1.09
-#### Release by SSNTails ( www.youtube.com/@ssntails )
-#### https://github.com/SSNTails/SRB2FD109
+# Sonic Robo Blast 2 Final Demo v1.09 Port for the PSP
 
-#### Pull Requests are welcome! Want to fix a bug? Add the new SDL2 layer? Those are just a few ideas.
+I want to do this
 
-
-~SSNTails
+- PSP 64 MB only
+- Hardware acceleration
+- Multiplayer support over WLAN
+- Addon support
