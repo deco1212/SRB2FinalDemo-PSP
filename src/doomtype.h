@@ -23,6 +23,12 @@
 #ifndef __DOOMTYPE__
 #define __DOOMTYPE__
 
+#ifdef PSP
+#include <string.h>
+#define stricmp strcasecmp
+#define strnicmp strncasecmp
+#endif
+
 #if defined(_WIN32) || (defined(_WIN32_WCE) && !defined(__GNUC__)) || defined (_WIN64)
 //#define WIN32_LEAN_AND_MEAN
 #define RPC_NO_WINDOWS_H
@@ -136,7 +142,6 @@ int strlwr(char* n); // from dosstr.c
 
 typedef ULONG tic_t;
 
-// Predefined with some OS.
 #ifndef _WIN32_WCE
 #ifndef _WIN32
 #ifndef _WIN64
@@ -145,7 +150,11 @@ typedef ULONG tic_t;
 #ifndef __CYGWIN__
 #ifndef __OS2__
 #ifndef _arch_dreamcast
+#ifndef PSP
 	#include <values.h>
+#else
+	#include <limits.h>
+#endif
 #else
 	#include <limits.h>
 #endif
@@ -156,6 +165,7 @@ typedef ULONG tic_t;
 #endif
 #endif
 #endif
+
 
 #ifdef MAXCHAR
 #undef MAXCHAR

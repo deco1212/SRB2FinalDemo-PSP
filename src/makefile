@@ -88,6 +88,7 @@ ifdef LINUX
 include sdl/makeNIX.cfg
 endif #ifdef LINUX
 
+
 ifdef MINGW
 include win32/makefile.cfg
 endif #ifdef MINGW
@@ -114,11 +115,14 @@ endif #ifdef SDL
 
 ifndef NONX86
 ifndef GCC29
-	M5=-march=pentium
-	M4=-march=i486
+ifdef PSP
+M5=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include
+M4=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include
+
+   LIBS += -L/usr/local/pspdev/psp/sdk/lib -lpspgu -lpspaudio -lpspctrl -lpspge -lpspdisplay -lpsphprm -lpspirkeyb -lvorbisidec -logg -lpsppower
 else
-	M5=-mpentium
-	M4=-m486
+    M5=-march=pentium
+    M4=-march=i486
 endif
 endif
 
@@ -147,7 +151,7 @@ else
 		# -fexpensive-optimizations -fforce-mem -fstrength-reduce -fthread-jumps  \
 		# -fregmove -fschedule-insns -fschedule-insns2 -fmove-all-movables \
 		# -fcaller-saves -finline-functions -mieee-fp -mfp-ret-in-387 -m80387 -mhard-float -finline
-	LIBS := -s $(LIBS)
+	LIBS := $(LIBS)
 endif
 
 ifdef PROFILEMODE
@@ -217,10 +221,7 @@ OBJS := $(i_main_o) \
 		$(OBJDIR)/md5.o      \
 		$(OBJDIR)/w_wad.o    \
 		$(OBJDIR)/filesrch.o \
-		$(OBJDIR)/mserv.o    \
-		$(OBJDIR)/i_tcp.o    \
-		$(i_cdmus_o)    \
-		$(i_net_o)      \
+                $(OBJDIR)/i_stub.o \
 		$(i_system_o)   \
 		$(i_sound_o)    \
 		$(OBJS)
@@ -272,6 +273,11 @@ $(BIN)/$(EXENAME): $(OBJS) $(OBJDIR)/d_netcmd.o
 	@echo Linking $(EXENAME)...
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(OBJDIR)/d_netcmd.o \
 	-o $(BIN)/$(EXENAME) $(LIBS)
+
+../bin/Release/EBOOT.PBP: ../bin/Release/srb2
+	psp-fixup-imports ../bin/Release/srb2
+	mksfo "SRB2 PSP" ../bin/Release/PARAM.SFO
+	pack-pbp ../bin/Release/EBOOT.PBP ../bin/Release/PARAM.SFO NULL NULL NULL NULL NULL ../bin/Release/srb2 NULL
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
@@ -455,6 +461,9 @@ $(OBJDIR)/vid_copy.o: vid_copy.s asm_defs.inc
 $(OBJDIR)/%.o: %.s
 	$(CC) $(OPTS) -x assembler-with-cpp -c $< -o $@
 
+$(OBJDIR)/i_stub.o: psp/i_stub.c
+	$(CC) $(CFLAGS) -c psp/i_stub.c -o $(OBJDIR)/i_stub.o
+
 $(OBJDIR)/SRB2.res: win32/Srb2win.rc win32/afxres.h win32/resource.h
 	$(WINDRES) -i $< -O rc $(WINDRESFLAGS) --include-dir=win32 -o $@ -O coff
 
@@ -467,6 +476,7 @@ $(OBJDIR)/romdisk.o: romdisk.img
 
 $(OBJDIR)/dchelp.o: $(INTERFACE)/SRB2DC/dchelp.c
 		$(CC) $(CFLAGS) $(WFLAGS) -c $< -o $@
+endif
 endif
 
 #############################################################

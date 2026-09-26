@@ -60,6 +60,14 @@ int logstream = INVALID_HANDLE_VALUE;
 #endif
 #endif
 
+#ifdef __PSP__
+#include <pspkernel.h>
+#include <psputility.h>
+
+// Keep ONLY this line here to unlock the extra 32MB of RAM on your hardware!
+PSP_LARGE_MEMORY_SUPPORT();
+#endif
+
 #ifdef _arch_dreamcast
 #include <arch/arch.h>
 KOS_INIT_FLAGS(INIT_DEFAULT);
