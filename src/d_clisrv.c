@@ -661,10 +661,43 @@ static void CL_ConnectToServer(void)
 	asksent = (tic_t)-TICRATE;
 	SL_ClearServerList(servernode);
 	do
+
 	{
 		switch(cl_mode)
 		{
 			case cl_searching:
+
+#ifdef PSP
+                // --- DEFINITIVE V1.09.4 NATIVE ENGINE OVERRIDE ---
+                server = true;
+                serverrunning = true;
+                netgame = false;     
+                multiplayer = false;  
+                
+                SV_ResetServer();
+                
+                consoleplayer = 0;
+                displayplayer = 0;
+                secondarydisplayplayer = 0;
+                serverplayer = 0;
+                
+                playeringame[0] = true; 
+                doomcom->numplayers = 1;
+                
+                // 1. Shift the engine status flags to level gameplay mode
+                gamestate = GS_LEVEL; 
+
+                G_InitNew(sk_medium, "MAP01", 0, false);
+                
+                // 4. Force execution cleanly out of this net synchronization do-while block frame
+                goto psp_bypass_net_loop;
+#endif
+
+
+
+
+
+
 				// serverlist is updated by GetPacket function
 				if(serverlistcount > 0)
 				{
@@ -789,6 +822,10 @@ static void CL_ConnectToServer(void)
 				if(nodeingame[i]) numnodes++;
 		}
 	} while(!(cl_mode == cl_connected && (!server || (server && nodewaited <= numnodes))));
+
+#ifdef PSP
+psp_bypass_net_loop:
+#endif
 
 	DEBFILE(va("Synchronisation Finished\n"));
 

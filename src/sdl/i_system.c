@@ -68,6 +68,14 @@
 /// \file
 /// \brief SRB2 system stuff for SDL
 
+#ifdef __PSP__
+#include <pspctrl.h>
+
+// Helper flag to ensure we only initialize the controller sampling mode once
+static int psp_input_initialized = 0;
+#endif
+
+
 #ifndef _WIN32_WCE
 #include <signal.h>
 #endif
@@ -489,9 +497,81 @@ void I_GetJoystickEvents(void)
 	INT64 joyhats = 0;
 	int axisx, axisy;
 
+#ifdef PSP
+    // 1. Safe Initialization: Force hardware to read analog and digital inputs
+    if (!psp_input_initialized) {
+        sceCtrlSetSamplingCycle(0);
+        sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
+        psp_input_initialized = 1;
+    }
+
+    // 2. Read the physical button packet from the hardware
+    SceCtrlData pad;
+    if (sceCtrlReadBufferPositive(&pad, 1) >= 0) {
+        event_t event;
+        
+        // --- START BUTTON (Maps to Menu Confirm / Enter) ---
+        if (pad.Buttons & PSP_CTRL_START) {
+            event.type = ev_keydown;
+            event.data1 = KEY_ENTER;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_ENTER;
+            D_PostEvent(&event);
+        }
+
+        // --- CROSS BUTTON (Maps to Jump / Select Options) ---
+        if (pad.Buttons & PSP_CTRL_CROSS) {
+            event.type = ev_keydown;
+            event.data1 = KEY_SPACE;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_SPACE;
+            D_PostEvent(&event);
+        }
+
+        // --- D-PAD DOWN (Maps to Arrow Down Navigation) ---
+        if ((pad.Buttons & PSP_CTRL_DOWN) || (pad.Ly > 192)) {
+            event.type = ev_keydown;
+            event.data1 = KEY_DOWNARROW;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_DOWNARROW;
+            D_PostEvent(&event);
+        }
+
+        // --- D-PAD UP (Maps to Arrow Up Navigation) ---
+        if ((pad.Buttons & PSP_CTRL_UP) || (pad.Ly < 64)) {
+            event.type = ev_keydown;
+            event.data1 = KEY_UPARROW;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_UPARROW;
+            D_PostEvent(&event);
+        }
+
+        if (pad.Buttons & PSP_CTRL_SELECT) {
+            event.type = ev_keydown;
+            event.data1 = KEY_ESCAPE;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_ESCAPE;
+            D_PostEvent(&event);
+        }
+    }
+#endif
+
 	if(!joystick_started) return;
 
 	if (!JoyInfo.dev) I_ShutdownJoystick();
+    
+    // ... the rest of the original joystick code continues natively below ...
+
 
 	//faB: look for as much buttons as g_input code supports,
 	//  we don't use the others
