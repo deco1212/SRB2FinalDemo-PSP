@@ -60,7 +60,7 @@ int logstream = INVALID_HANDLE_VALUE;
 #endif
 #endif
 
-#ifdef __PSP__
+#ifdef PSP
 #include <pspkernel.h>
 #include <psputility.h>
 

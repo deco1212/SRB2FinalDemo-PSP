@@ -1917,6 +1917,11 @@ static const char *searchWad(const char *searchDir)
 
   \return path to srb2.srb if any
 */
+
+#ifdef PSP
+#define DEFAULTWADLOCATION1 "ms0:/PSP/GAME/SRB2"
+#endif
+
 static const char *locateWad(void)
 {
 	const char *WadPath;

@@ -116,8 +116,8 @@ endif #ifdef SDL
 ifndef NONX86
 ifndef GCC29
 ifdef PSP
-M5=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include
-M4=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include
+M5=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include -D__PSP__ -DPSP
+M4=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include -D__PSP__ -DPSP
 
    LIBS += -L/usr/local/pspdev/psp/sdk/lib -lpspgu -lpspaudio -lpspctrl -lpspge -lpspdisplay -lpsphprm -lpspirkeyb -lvorbisidec -logg -lpsppower
 else
@@ -276,7 +276,7 @@ $(BIN)/$(EXENAME): $(OBJS) $(OBJDIR)/d_netcmd.o
 
 ../bin/Release/EBOOT.PBP: ../bin/Release/srb2
 	psp-fixup-imports ../bin/Release/srb2
-	mksfo "SRB2 PSP" ../bin/Release/PARAM.SFO
+	mksfoex -d MEMSIZE=1 "SRB2 PSP" ../bin/Release/PARAM.SFO
 	pack-pbp ../bin/Release/EBOOT.PBP ../bin/Release/PARAM.SFO NULL NULL NULL NULL NULL ../bin/Release/srb2 NULL
 
 $(OBJDIR):
