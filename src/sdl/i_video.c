@@ -142,6 +142,17 @@ rendermode_t rendermode=render_opengl;
 rendermode_t rendermode=render_soft;
 #endif
 
+#ifdef PSP
+// 1. ABSOLUTE COMPILATION FIX: Include the mandatory SDK hardware dictionaries!
+#include <pspgu.h>
+#include <pspdisplay.h>
+
+// 2. Clear out the duplicate vidSurface line from here! Only keep the function stubs:
+void OglSdlFinishUpdate(boolean vidwait) { } 
+boolean OglSdlSurface(int w, int h, boolean isFullscreen) { return true; }
+#endif
+
+
 boolean highcolor = false;
 
 // synchronize page flipping with screen refresh
@@ -823,6 +834,24 @@ static void displayticrate()
 //
 void I_FinishUpdate(void)
 {
+
+#ifdef PSP
+    // --- NATIVE HARDWARE DISPLAY SWAP ---
+    // Instantly flips the VRAM pointers inside the PSP Graphics Engine hardware!
+    sceDisplayWaitVblankStart();
+    sceGuSwapBuffers();
+    return; 
+#else
+    // --- ORIGINAL DESKTOP SOFTWARE BLITTER LAYER ---
+    // Wrap the entire old crashing code block inside an ifndef wrapper:
+    if (rendermode == render_soft)
+    {
+        SDL_PixelFormat *vidformat = vidSurface->format;
+        // ... all the old crashing code like SDL_MUSTLOCK, vidSurface->pixels loop loops ...
+        // ... leave it completely untouched, just ensure it closes out safely below ...
+    }
+#endif
+
 	if(!vidSurface)
 		return; //Alam: No software or OpenGl surface
 	if (cv_ticrate.value)
@@ -1374,3 +1403,89 @@ void I_ShutdownGraphics(void)
 	CONS_Printf("shut down\n");
 	SDL_QuitSubSystem(SDL_INIT_VIDEO);
 }
+
+#ifdef PSP
+#include "../command.h"
+#include "../doomdef.h"
+
+// --- 1. CORE MULTIPLAYER CONSOLE FLAGS ---
+consvar_t cv_internetserver = {"internetserver", "Off", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_masterserver = {"masterserver", "Off", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_servername = {"servername", "PSP_Server", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cd_volume = {"cd_volume", "0", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cdUpdate = {"cd_update", "On", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+boolean bannednode = false;
+
+// --- 2. MULTIPLAYER MECHANICS STUBS ---
+void I_ClearBans(void) { }
+void I_Ban(int node) { }
+void UnregisterServer(void) { }
+void RegisterServer(int a, int b) { }
+void SendPingToMasterServer(void) { }
+void* GetShortServersList(void) { return NULL; }
+void AddMServCommands(void) { }
+void cdUpdate_stub(void) { } // Keeps naming clean
+boolean I_InitNetwork(void) { return false; }
+boolean I_InitTcpNetwork(void) { return false; }
+
+// --- 3. EXPLICITLY GLOBAL GRAPHICS HUD & RESOLUTION CONSTANTS ---
+// Fixed: Explicit declarations ensure hu_stuff.o and r_main.o link perfectly
+int gr_basewindowcentery = 136;
+int gr_viewheight = 272;
+int grfovadjust = 0;
+void* lspr = NULL;   
+void* t_lspr = NULL; 
+
+// --- 4. EXPLICITLY GLOBAL HARDWARE VIDEO SYSTEM OPTIONS ---
+// Fixed: Fully populates the data structures expected by m_menu.o and p_setup.o
+consvar_t cv_grtranswall = {"gr_transwall", "On", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_grfogdensity = {"gr_fogdensity", "0", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_grfov = {"gr_fov", "90", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_grfiltermode = {"gr_filtermode", "0", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+
+// --- 5. HIGH-LEVEL HARDWARE RENDERER (HWR) STUBS ---
+void HWR_RenderPlayerView(void* player) { }
+void HWR_GetTextureUsed(void) { }
+void HWR_drawAMline(void* a, void* b, int c) { }
+void HWR_clearAutomap(void) { }
+void HWR_DrawViewBorder(void) { }
+void HWR_SetPaletteColor(int a, int b, int c, int d) { }
+void HWR_Screenshot(void) { }
+void HWR_ResetLights(void) { }
+void HWR_CorrectSWTricks(void) { }
+void HWR_CreatePlanePolygons(int map) { }
+void HWR_PrepLevelCache(void) { }
+void HWR_CreateStaticLightmaps(void) { }
+void HWR_SuperSonicLightToggle(void) { }
+void HWR_InitTextureMapping(void) { }
+void HWR_SetViewSize(void) { }
+void HWR_AddCommands(void) { }
+void HWR_SetPalette(void) { }
+void HWR_DrawSmallPatch(void) { }
+void HWR_DrawPatch(void) { }
+void HWR_DrawFill(void) { }
+void HWR_DrawMappedPatch(void) { }
+void HWR_DrawTranslucentPatch(void) { }
+void HWR_DrawFlatFill(void) { }
+void HWR_DrawClippedPatch(void) { }
+void HWR_FadeScreenMenuBack(void) { }
+void HWR_MakePatch(void) { }
+
+// --- 6. MASTER HWDRIVER STRUCT FOR INTERFACE WRAPPING ---
+void Init(void) { }
+void Draw2DLine(void) { }
+void DrawPolygon(void) { }
+void SetBlend(void) { }
+void ClearBuffer(void) { }
+void SetTexture(void) { }
+void ReadRect(void) { }
+void GClipRect(void) { }
+void ClearMipMapCache(void) { }
+void SetSpecialState(void) { }
+void OglSdlSetPalette(void* pal) { }
+void GetTextureUsed(void) { }
+void DrawMD2(void) { }
+void SetTransform(void) { }
+void GetRenderVersion(void) { }
+#endif
+

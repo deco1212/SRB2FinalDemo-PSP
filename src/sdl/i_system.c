@@ -507,79 +507,60 @@ void I_GetJoystickEvents(void)
 
     // --- GLOBAL VECTOR LINKAGE: Exposed game engine frame parameters ---
     extern ticcmd_t netcmds[BACKUPTICS][MAXPLAYERS];
-    extern tic_t gametic; 
+    extern tic_t gametic;
 
     SceCtrlData pad;
+    static unsigned int lastpspbuttons = 0;
 
     if (sceCtrlReadBufferPositive(&pad, 1) >= 0) {
         event_t event;
         int active_tic = gametic % BACKUPTICS;
+        unsigned int changed = pad.Buttons ^ lastpspbuttons;
 
-        // --- FIXED MENU EVENT POSTING ENGINE (Stripped of the broken changed mask) ---
-        // This ensures the menus immediately listen to the active physical button states
-        
-        // START BUTTON (Menu Confirm / Advance)
-        if (pad.Buttons & PSP_CTRL_START) {
-            event.type = ev_keydown;
-            event.data1 = KEY_ENTER;
-            D_PostEvent(&event);
-        } else {
-            event.type = ev_keyup;
+        // --- EDGE-DETECTED MENU EVENT POSTING ---
+        // Only post a key event when a button's state actually changes,
+        // not every single frame it's held (that was the "turbo" bug).
+
+        if (changed & PSP_CTRL_START) {
+            event.type = (pad.Buttons & PSP_CTRL_START) ? ev_keydown : ev_keyup;
             event.data1 = KEY_ENTER;
             D_PostEvent(&event);
         }
 
-        // SELECT BUTTON (Menu Back / Cancel / Escape)
-        if (pad.Buttons & PSP_CTRL_SELECT) {
-            event.type = ev_keydown;
-            event.data1 = KEY_ESCAPE;
-            D_PostEvent(&event);
-        } else {
-            event.type = ev_keyup;
+        if (changed & PSP_CTRL_SELECT) {
+            event.type = (pad.Buttons & PSP_CTRL_SELECT) ? ev_keydown : ev_keyup;
             event.data1 = KEY_ESCAPE;
             D_PostEvent(&event);
         }
 
-        // D-PAD UP (Menu Navigation Up)
-        if (pad.Buttons & PSP_CTRL_UP) {
-            event.type = ev_keydown;
-            event.data1 = KEY_UPARROW;
-            D_PostEvent(&event);
-        } else {
-            event.type = ev_keyup;
+        if (changed & PSP_CTRL_UP) {
+            event.type = (pad.Buttons & PSP_CTRL_UP) ? ev_keydown : ev_keyup;
             event.data1 = KEY_UPARROW;
             D_PostEvent(&event);
         }
 
-        // D-PAD DOWN (Menu Navigation Down)
-        if (pad.Buttons & PSP_CTRL_DOWN) {
-            event.type = ev_keydown;
-            event.data1 = KEY_DOWNARROW;
-            D_PostEvent(&event);
-        } else {
-            event.type = ev_keyup;
+        if (changed & PSP_CTRL_DOWN) {
+            event.type = (pad.Buttons & PSP_CTRL_DOWN) ? ev_keydown : ev_keyup;
             event.data1 = KEY_DOWNARROW;
             D_PostEvent(&event);
         }
 
+        lastpspbuttons = pad.Buttons;
 
         // --- DIRECT GAMEPLAY BUFFER INJECTION ---
-        // Keeps continuous physics velocity arrays tracking cleanly for Player 0
-        
-        // 3D Forward / Reverse Velocity Values
+        // These are continuous state setters (not discrete events), so
+        // setting them every frame based on current button state is correct.
+
         if (pad.Buttons & PSP_CTRL_UP)         netcmds[active_tic][0].forwardmove = 50;
         else if (pad.Buttons & PSP_CTRL_DOWN)  netcmds[active_tic][0].forwardmove = -50;
         else                                   netcmds[active_tic][0].forwardmove = 0;
 
-        // 3D Turning Vectors
         if (pad.Buttons & PSP_CTRL_RIGHT)      netcmds[active_tic][0].angleturn = -1200;
-        else if (pad.Buttons & PSP_CTRL_LEFT)   netcmds[active_tic][0].angleturn = 1200;
+        else if (pad.Buttons & PSP_CTRL_LEFT)  netcmds[active_tic][0].angleturn = 1200;
         else                                   netcmds[active_tic][0].angleturn = 0;
 
-        // Reset the gameplay action flags by default every frame tick loop
         netcmds[active_tic][0].buttons = 0;
 
-        // Direct button flag mappings to prevent rapid-fire thok loops
         if (pad.Buttons & PSP_CTRL_CROSS) {
             netcmds[active_tic][0].buttons = BT_JUMP;
         }
@@ -587,7 +568,6 @@ void I_GetJoystickEvents(void)
             netcmds[active_tic][0].buttons = BT_USE;
         }
 
-        // Force a flag bit to tell the physics engine this command array is fully updated!
         netcmds[active_tic][0].angleturn |= TICCMD_RECEIVED;
     }
 #endif

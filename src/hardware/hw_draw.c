@@ -36,7 +36,9 @@
 #include <sys/unistd.h>
 #endif
 #ifndef __MACOS__
+#ifndef PSP
 #include <io.h>
+#endif
 #endif
 #else
 #endif // normalunix

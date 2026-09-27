@@ -119,7 +119,7 @@ ifdef PSP
 M5=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include -D__PSP__ -DPSP
 M4=-march=allegrex -std=gnu89 -I/usr/local/pspdev/psp/sdk/include -D__PSP__ -DPSP
 
-   LIBS += -L/usr/local/pspdev/psp/sdk/lib -lpspgu -lpspaudio -lpspctrl -lpspge -lpspdisplay -lpsphprm -lpspirkeyb -lvorbisidec -logg -lpsppower
+   LIBS += -L/usr/local/pspdev/psp/sdk/lib -lpspgum -lpspgu -lpspaudio -lpspctrl -lpspge -lpspdisplay -lpsphprm -lpspirkeyb -lvorbisidec -logg -lpsppower  
 else
     M5=-march=pentium
     M4=-march=i486
@@ -221,10 +221,15 @@ OBJS := $(i_main_o) \
 		$(OBJDIR)/md5.o      \
 		$(OBJDIR)/w_wad.o    \
 		$(OBJDIR)/filesrch.o \
-                $(OBJDIR)/i_stub.o \
 		$(i_system_o)   \
 		$(i_sound_o)    \
 		$(OBJS)
+
+$(OBJDIR)/i_stub.o: psp/i_stub.c
+	$(CC) $(CFLAGS) -c psp/i_stub.c -o $(OBJDIR)/i_stub.o
+
+$(OBJDIR)/r_psp.o: hardware/r_psp/r_psp.c hardware/r_psp/r_psp.h
+	$(CC) $(CFLAGS) $(WFLAGS) -DHWRENDER -c hardware/r_psp/r_psp.c -o $(OBJDIR)/r_psp.o
 
 ifdef DJGPPDOS
 all:	 pre-build $(BIN)/$(EXENAME)

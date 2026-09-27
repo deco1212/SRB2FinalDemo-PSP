@@ -64,6 +64,10 @@ int logstream = INVALID_HANDLE_VALUE;
 #include <pspkernel.h>
 #include <psputility.h>
 
+PSP_MODULE_INFO("SRB2_PSP", 0, 1, 0);
+
+PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
+
 // Keep ONLY this line here to unlock the extra 32MB of RAM on your hardware!
 PSP_LARGE_MEMORY_SUPPORT();
 #endif

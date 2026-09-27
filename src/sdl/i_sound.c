@@ -116,6 +116,15 @@ static Uint16 samplecount = 512;
 static Uint16 samplecount = 1024; //Alam: 1KB samplecount at 22050hz is 46.439909297052154195011337868481ms of buffer
 #endif
 
+#ifdef PSP
+void I_InitCD(void) { }
+void I_UpdateCD(void) { }
+void I_PlayCD(int track, boolean looping) { }
+void I_PauseCD(void) { }
+void I_ResumeCD(void) { }
+void I_ShutdownCD(void) { }
+#endif
+
 static Uint32 lengths[NUMSFX];     // The actual lengths of all sound effects.
 
 typedef struct chan_struct

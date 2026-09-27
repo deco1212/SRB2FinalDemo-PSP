@@ -833,6 +833,24 @@ static void CL_ConnectToServer(void)
 	} while(!(cl_mode == cl_connected && (!server || (server && nodewaited <= numnodes))));
 
 #ifdef PSP
+#include "command.h" // Ensures consvar_t is fully recognized
+
+// Dummy network variables to satisfy the menu and setup layers
+consvar_t cv_internetserver = {"internetserver", "Off", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_masterserver = {"masterserver", "Off", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+consvar_t cv_servername = {"servername", "PSP_Server", 0, NULL, NULL, 0, NULL, NULL, 0, 0, NULL};
+boolean bannednode[32] = {false};
+
+// Dummy network function targets
+void I_ClearBans(void) { }
+void I_Ban(int node) { }
+void UnregisterServer(void) { }
+void RegisterServer(int a, int b) { }
+void SendPingToMasterServer(void) { }
+void* GetShortServersList(void) { return NULL; }
+boolean I_InitNetwork(void) { return false; }
+boolean I_InitTcpNetwork(void) { return false; }
+
 psp_bypass_net_loop:
 #endif
 

@@ -3,82 +3,110 @@
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h g_game.h \
  d_event.h am_map.h g_input.h keys.h p_local.h m_bbox.h p_tick.h r_defs.h \
  screen.h p_maputl.h p_spec.h v_video.h st_stuff.h i_system.h i_video.h \
- r_state.h r_data.h dstrings.h d_englsh.h w_wad.h z_zone.h r_draw.h \
- r_main.h d_main.h
+ r_state.h r_data.h dstrings.h d_englsh.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h z_zone.h \
+ r_draw.h r_main.h d_main.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_player.h hardware/../r_defs.h
 ../objs/SDL/Release/command.o: command.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h console.h \
- d_event.h z_zone.h m_menu.h m_misc.h w_wad.h m_argv.h byteptr.h \
- p_saveg.h g_game.h hu_stuff.h r_defs.h screen.h
+ d_event.h z_zone.h m_menu.h m_misc.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h m_argv.h byteptr.h p_saveg.h g_game.h hu_stuff.h \
+ r_defs.h screen.h
 ../objs/SDL/Release/console.o: console.c doomdef.h doomtype.h g_state.h m_swap.h console.h \
  d_event.h g_game.h doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h \
  tables.h info.h d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h \
- d_netcmd.h command.h g_input.h keys.h hu_stuff.h w_wad.h r_defs.h \
- screen.h st_stuff.h s_sound.h v_video.h i_video.h z_zone.h i_system.h \
- d_main.h
+ d_netcmd.h command.h g_input.h keys.h hu_stuff.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h r_defs.h screen.h st_stuff.h \
+ s_sound.h v_video.h i_video.h z_zone.h i_system.h d_main.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../r_defs.h
 ../objs/SDL/Release/d_clisrv.o: d_clisrv.c doomdef.h doomtype.h g_state.h m_swap.h i_net.h \
  command.h i_system.h d_ticcmd.h m_fixed.h d_event.h i_video.h d_net.h \
- d_main.h w_wad.h g_game.h doomstat.h doomdata.h d_player.h p_pspr.h \
- tables.h info.h d_think.h sounds.h p_mobj.h d_clisrv.h d_netcmd.h \
- hu_stuff.h r_defs.h screen.h keys.h m_menu.h console.h d_netfil.h \
- byteptr.h p_saveg.h z_zone.h p_local.h m_bbox.h p_tick.h p_maputl.h \
- p_spec.h m_misc.h am_map.h m_random.h mserv.h i_tcp.h y_inter.h r_main.h \
- r_data.h r_state.h
+ d_main.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h g_game.h \
+ doomstat.h doomdata.h d_player.h p_pspr.h tables.h info.h d_think.h \
+ sounds.h p_mobj.h d_clisrv.h d_netcmd.h hu_stuff.h r_defs.h screen.h \
+ keys.h m_menu.h console.h d_netfil.h byteptr.h p_saveg.h z_zone.h \
+ p_local.h m_bbox.h p_tick.h p_maputl.h p_spec.h m_misc.h am_map.h \
+ m_random.h mserv.h i_tcp.h y_inter.h r_main.h r_data.h r_state.h
 ../objs/SDL/Release/d_main.o: d_main.c doomdef.h doomtype.h g_state.h m_swap.h am_map.h \
  d_event.h console.h d_net.h dstrings.h d_englsh.h f_finale.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
- hu_stuff.h w_wad.h r_defs.h screen.h i_sound.h i_system.h i_video.h \
- m_argv.h m_menu.h m_misc.h p_setup.h r_main.h r_data.h r_state.h \
- r_local.h m_bbox.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h \
- r_draw.h s_sound.h st_stuff.h v_video.h z_zone.h d_main.h d_netfil.h \
- m_cheat.h y_inter.h p_local.h p_tick.h p_maputl.h p_spec.h \
- hardware/hw3sound.h hardware/hws_data.h
+ hu_stuff.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h r_defs.h \
+ screen.h i_sound.h i_system.h i_video.h m_argv.h m_menu.h m_misc.h \
+ p_setup.h r_main.h r_data.h r_state.h r_local.h m_bbox.h r_bsp.h \
+ r_segs.h r_plane.h r_sky.h r_things.h r_draw.h s_sound.h st_stuff.h \
+ v_video.h z_zone.h d_main.h d_netfil.h m_cheat.h y_inter.h p_local.h \
+ p_tick.h p_maputl.h p_spec.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_player.h hardware/../r_defs.h hardware/hw3sound.h \
+ hardware/hws_data.h
 ../objs/SDL/Release/d_net.o: d_net.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
- d_event.h i_net.h i_system.h m_argv.h d_net.h w_wad.h d_netfil.h \
- z_zone.h i_tcp.h
+ d_event.h i_net.h i_system.h m_argv.h d_net.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h d_netfil.h z_zone.h i_tcp.h
 ../objs/SDL/Release/d_netcmd.o: d_netcmd.c doomdef.h doomtype.h g_state.h m_swap.h console.h \
  d_event.h command.h i_system.h d_ticcmd.h m_fixed.h dstrings.h \
  d_englsh.h g_game.h doomstat.h doomdata.h d_player.h p_pspr.h tables.h \
  info.h d_think.h sounds.h p_mobj.h d_clisrv.h d_netcmd.h hu_stuff.h \
- w_wad.h r_defs.h screen.h g_input.h keys.h m_menu.h r_local.h m_bbox.h \
- r_main.h r_data.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h \
- r_things.h r_draw.h p_local.h p_tick.h p_maputl.h p_spec.h p_setup.h \
- s_sound.h m_misc.h am_map.h byteptr.h d_netfil.h m_cheat.h v_video.h \
- d_main.h m_random.h f_finale.h mserv.h md5.h
+ w_wad.h hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h r_defs.h screen.h g_input.h \
+ keys.h m_menu.h r_local.h m_bbox.h r_main.h r_data.h r_state.h r_bsp.h \
+ r_segs.h r_plane.h r_sky.h r_things.h r_draw.h p_local.h p_tick.h \
+ p_maputl.h p_spec.h p_setup.h s_sound.h m_misc.h am_map.h byteptr.h \
+ d_netfil.h m_cheat.h v_video.h d_main.h m_random.h f_finale.h mserv.h \
+ md5.h
 ../objs/SDL/Release/d_netfil.o: d_netfil.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h d_main.h \
- d_event.h w_wad.h g_game.h i_net.h i_system.h m_argv.h d_net.h \
- d_netfil.h z_zone.h byteptr.h p_setup.h r_defs.h screen.h m_misc.h \
- m_menu.h md5.h filesrch.h
+ d_event.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h g_game.h \
+ i_net.h i_system.h m_argv.h d_net.h d_netfil.h z_zone.h byteptr.h \
+ p_setup.h r_defs.h screen.h m_misc.h m_menu.h md5.h filesrch.h
 ../objs/SDL/Release/dehacked.o: dehacked.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
- d_event.h dstrings.h d_englsh.h m_argv.h z_zone.h w_wad.h m_menu.h \
- m_misc.h f_finale.h dehacked.h st_stuff.h r_defs.h screen.h
+ d_event.h dstrings.h d_englsh.h m_argv.h z_zone.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h m_menu.h m_misc.h f_finale.h \
+ dehacked.h st_stuff.h r_defs.h screen.h hardware/hw_light.h \
+ hardware/hw_glob.h hardware/hw_defs.h hardware/../doomtype.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h
 ../objs/SDL/Release/dstrings.o: dstrings.c dstrings.h d_englsh.h
 ../objs/SDL/Release/f_finale.o: f_finale.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h am_map.h \
- d_event.h dstrings.h d_englsh.h d_main.h w_wad.h f_finale.h g_game.h \
- hu_stuff.h r_defs.h screen.h r_local.h m_bbox.h r_main.h r_data.h \
- r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h r_draw.h \
- s_sound.h i_video.h v_video.h z_zone.h i_system.h m_menu.h dehacked.h \
- keys.h console.h m_random.h
+ d_event.h dstrings.h d_englsh.h d_main.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h f_finale.h g_game.h hu_stuff.h r_defs.h screen.h \
+ r_local.h m_bbox.h r_main.h r_data.h r_state.h r_bsp.h r_segs.h \
+ r_plane.h r_sky.h r_things.h r_draw.h s_sound.h i_video.h v_video.h \
+ z_zone.h i_system.h m_menu.h dehacked.h keys.h console.h m_random.h
 ../objs/SDL/Release/f_wipe.o: f_wipe.c i_video.h doomtype.h v_video.h doomdef.h g_state.h \
  m_swap.h r_defs.h m_fixed.h d_think.h p_mobj.h tables.h doomdata.h \
  info.h sounds.h screen.h command.h r_draw.h p_pspr.h f_finale.h \
  d_event.h
 ../objs/SDL/Release/filesrch.o: filesrch.c filesrch.h doomdef.h doomtype.h g_state.h m_swap.h \
- d_netfil.h w_wad.h m_misc.h
+ d_netfil.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ hardware/../doomtype.h m_misc.h
 ../objs/SDL/Release/g_game.o: g_game.c doomdef.h doomtype.h g_state.h m_swap.h console.h \
- d_event.h dstrings.h d_englsh.h d_main.h w_wad.h f_finale.h p_setup.h \
+ d_event.h dstrings.h d_englsh.h d_main.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../doomtype.h f_finale.h p_setup.h \
  doomdata.h r_defs.h m_fixed.h d_think.h p_mobj.h tables.h info.h \
- sounds.h screen.h command.h p_saveg.h i_system.h d_ticcmd.h am_map.h \
- m_random.h p_local.h d_player.h p_pspr.h m_bbox.h p_tick.h p_maputl.h \
+ sounds.h screen.h p_saveg.h i_system.h d_ticcmd.h am_map.h m_random.h \
+ p_local.h command.h d_player.h p_pspr.h m_bbox.h p_tick.h p_maputl.h \
  p_spec.h r_draw.h r_main.h r_data.h r_state.h s_sound.h g_game.h \
  doomstat.h d_clisrv.h d_netcmd.h m_cheat.h m_misc.h m_menu.h m_argv.h \
  hu_stuff.h st_stuff.h z_zone.h i_video.h byteptr.h i_joy.h g_input.h \
@@ -86,22 +114,39 @@
 ../objs/SDL/Release/g_input.o: g_input.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h g_input.h \
- d_event.h keys.h hu_stuff.h w_wad.h r_defs.h screen.h d_net.h console.h
+ d_event.h keys.h hu_stuff.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h r_defs.h screen.h d_net.h console.h
 ../objs/SDL/Release/hu_stuff.o: hu_stuff.c doomdef.h doomtype.h g_state.h m_swap.h byteptr.h \
- hu_stuff.h d_event.h w_wad.h r_defs.h m_fixed.h d_think.h p_mobj.h \
- tables.h doomdata.h info.h sounds.h screen.h command.h d_clisrv.h \
- d_ticcmd.h d_netcmd.h g_game.h doomstat.h d_player.h p_pspr.h g_input.h \
- keys.h i_video.h dstrings.h d_englsh.h st_stuff.h r_local.h m_bbox.h \
- r_main.h r_data.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h \
- r_things.h r_draw.h v_video.h z_zone.h console.h am_map.h d_main.h \
- p_tick.h
-../objs/SDL/Release/i_tcp.o: i_tcp.c doomdef.h doomtype.h g_state.h m_swap.h i_system.h \
- d_ticcmd.h m_fixed.h d_event.h i_net.h command.h d_net.h i_tcp.h \
- m_argv.h doomstat.h doomdata.h d_player.h p_pspr.h tables.h info.h \
- d_think.h sounds.h p_mobj.h d_clisrv.h d_netcmd.h
+ hu_stuff.h d_event.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ hardware/../doomtype.h r_defs.h m_fixed.h d_think.h p_mobj.h tables.h \
+ doomdata.h info.h sounds.h screen.h d_clisrv.h d_ticcmd.h d_netcmd.h \
+ command.h g_game.h doomstat.h d_player.h p_pspr.h g_input.h keys.h \
+ i_video.h dstrings.h d_englsh.h st_stuff.h r_local.h m_bbox.h r_main.h \
+ r_data.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h \
+ r_draw.h v_video.h z_zone.h console.h am_map.h d_main.h p_tick.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_player.h \
+ hardware/../r_defs.h
+../objs/SDL/Release/i_tcp.o: i_tcp.c doomdef.h doomtype.h g_state.h m_swap.h \
+ /usr/local/pspdev/psp/sdk/include/arpa/inet.h \
+ /usr/local/pspdev/psp/sdk/include/netinet/in.h \
+ /usr/local/pspdev/psp/sdk/include/sys/socket.h \
+ /usr/local/pspdev/psp/sdk/include/netdb.h \
+ /usr/local/pspdev/psp/sdk/include/sys/ioctl.h i_system.h d_ticcmd.h \
+ m_fixed.h d_event.h i_net.h command.h d_net.h i_tcp.h m_argv.h \
+ doomstat.h doomdata.h d_player.h p_pspr.h tables.h info.h d_think.h \
+ sounds.h p_mobj.h d_clisrv.h d_netcmd.h
 ../objs/SDL/Release/info.o: info.c doomdef.h doomtype.h g_state.h m_swap.h sounds.h p_mobj.h \
  tables.h m_fixed.h d_think.h doomdata.h info.h z_zone.h d_player.h \
- p_pspr.h d_ticcmd.h
+ p_pspr.h d_ticcmd.h hardware/hw_light.h hardware/hw_glob.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/hw_main.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h hardware/../doomtype.h \
+ hardware/../am_map.h hardware/../d_event.h hardware/../g_state.h \
+ hardware/../d_player.h hardware/../r_defs.h hardware/../m_fixed.h \
+ hardware/../d_think.h hardware/../p_mobj.h hardware/../screen.h
 ../objs/SDL/Release/m_argv.o: m_argv.c doomdef.h doomtype.h g_state.h m_swap.h command.h \
  m_argv.h
 ../objs/SDL/Release/m_bbox.o: m_bbox.c doomtype.h m_bbox.h m_fixed.h
@@ -111,28 +156,43 @@
  p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h r_local.h screen.h \
  m_bbox.h r_main.h r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h \
  r_sky.h r_things.h r_draw.h p_local.h p_tick.h p_maputl.h p_spec.h \
- i_sound.h s_sound.h v_video.h st_stuff.h w_wad.h
+ i_sound.h s_sound.h v_video.h st_stuff.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h
 ../objs/SDL/Release/m_fixed.o: m_fixed.c doomdef.h doomtype.h g_state.h m_swap.h m_fixed.h
 ../objs/SDL/Release/m_menu.o: m_menu.c am_map.h d_event.h doomtype.h g_state.h doomdef.h \
- m_swap.h dstrings.h d_englsh.h d_main.h w_wad.h d_netcmd.h command.h \
+ m_swap.h dstrings.h d_englsh.h d_main.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../doomtype.h d_netcmd.h command.h \
  console.h r_local.h tables.h m_fixed.h screen.h m_bbox.h r_main.h \
  d_player.h p_pspr.h info.h d_think.h sounds.h p_mobj.h doomdata.h \
  d_ticcmd.h r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h \
  r_sky.h r_things.h r_draw.h hu_stuff.h g_game.h doomstat.h d_clisrv.h \
  g_input.h keys.h m_argv.h s_sound.h i_system.h m_menu.h v_video.h \
- i_video.h z_zone.h p_local.h p_tick.h p_maputl.h p_spec.h d_net.h \
- mserv.h m_misc.h byteptr.h st_stuff.h i_sound.h
+ i_video.h z_zone.h p_local.h p_tick.h p_maputl.h p_spec.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_player.h \
+ hardware/../r_defs.h d_net.h mserv.h m_misc.h byteptr.h st_stuff.h \
+ i_sound.h
 ../objs/SDL/Release/m_misc.o: m_misc.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
- d_event.h m_misc.h w_wad.h hu_stuff.h r_defs.h screen.h v_video.h \
- z_zone.h g_input.h keys.h i_video.h d_main.h m_argv.h
+ d_event.h m_misc.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ hu_stuff.h r_defs.h screen.h v_video.h z_zone.h g_input.h keys.h \
+ i_video.h d_main.h m_argv.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h
 ../objs/SDL/Release/m_random.o: m_random.c doomdef.h doomtype.h g_state.h m_swap.h m_random.h
 ../objs/SDL/Release/md5.o: md5.c md5.h
-../objs/SDL/Release/mserv.o: mserv.c doomstat.h doomdata.h doomtype.h doomdef.h g_state.h \
- m_swap.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
- sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h i_net.h \
- console.h d_event.h mserv.h d_net.h i_tcp.h i_system.h
+../objs/SDL/Release/mserv.o: mserv.c /usr/local/pspdev/psp/sdk/include/sys/socket.h \
+ /usr/local/pspdev/psp/sdk/include/netinet/in.h \
+ /usr/local/pspdev/psp/sdk/include/arpa/inet.h \
+ /usr/local/pspdev/psp/sdk/include/netdb.h \
+ /usr/local/pspdev/psp/sdk/include/sys/ioctl.h doomstat.h doomdata.h \
+ doomtype.h doomdef.h g_state.h m_swap.h d_player.h p_pspr.h m_fixed.h \
+ tables.h info.h d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h \
+ d_netcmd.h command.h i_net.h console.h d_event.h mserv.h d_net.h i_tcp.h \
+ i_system.h
 ../objs/SDL/Release/p_ceilng.o: p_ceilng.c doomdef.h doomtype.h g_state.h m_swap.h p_local.h \
  command.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h doomdata.h d_ticcmd.h m_bbox.h p_tick.h r_defs.h \
@@ -178,23 +238,31 @@
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
  d_event.h g_input.h keys.h st_stuff.h r_defs.h screen.h hu_stuff.h \
- w_wad.h p_local.h m_bbox.h p_tick.h p_maputl.h p_spec.h p_setup.h \
- r_main.h r_data.h r_state.h r_things.h r_sky.h s_sound.h z_zone.h \
- m_random.h
+ w_wad.h hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h p_local.h m_bbox.h p_tick.h p_maputl.h p_spec.h \
+ p_setup.h r_main.h r_data.h r_state.h r_things.h r_sky.h s_sound.h \
+ z_zone.h m_random.h
 ../objs/SDL/Release/p_saveg.o: p_saveg.c doomdef.h doomtype.h g_state.h m_swap.h byteptr.h \
- d_main.h d_event.h w_wad.h g_game.h doomstat.h doomdata.h d_player.h \
+ d_main.h d_event.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ hardware/../doomtype.h g_game.h doomstat.h doomdata.h d_player.h \
  p_pspr.h m_fixed.h tables.h info.h d_think.h sounds.h p_mobj.h \
  d_ticcmd.h d_clisrv.h d_netcmd.h command.h m_random.h p_local.h m_bbox.h \
  p_tick.h r_defs.h screen.h p_maputl.h p_spec.h p_setup.h p_saveg.h \
  r_things.h r_state.h r_data.h y_inter.h z_zone.h r_main.h r_sky.h
 ../objs/SDL/Release/p_setup.o: p_setup.c doomdef.h doomtype.h g_state.h m_swap.h d_main.h \
- d_event.h w_wad.h byteptr.h g_game.h doomstat.h doomdata.h d_player.h \
- p_pspr.h m_fixed.h tables.h info.h d_think.h sounds.h p_mobj.h \
- d_ticcmd.h d_clisrv.h d_netcmd.h command.h p_local.h m_bbox.h p_tick.h \
- r_defs.h screen.h p_maputl.h p_spec.h p_setup.h i_sound.h i_video.h \
- r_sky.h r_data.h r_state.h r_things.h s_sound.h st_stuff.h z_zone.h \
- r_splats.h hu_stuff.h console.h m_misc.h m_random.h dehacked.h r_main.h \
- m_argv.h
+ d_event.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ hardware/../doomtype.h byteptr.h g_game.h doomstat.h doomdata.h \
+ d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h sounds.h \
+ p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h p_local.h m_bbox.h \
+ p_tick.h r_defs.h screen.h p_maputl.h p_spec.h p_setup.h i_sound.h \
+ i_video.h r_sky.h r_data.h r_state.h r_things.h s_sound.h st_stuff.h \
+ z_zone.h r_splats.h hu_stuff.h console.h m_misc.h m_random.h dehacked.h \
+ r_main.h m_argv.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h \
+ hardware/hw_light.h hardware/hw_glob.h hardware/hw_main.h
 ../objs/SDL/Release/p_sight.o: p_sight.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h p_local.h \
@@ -205,8 +273,9 @@
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
  d_event.h p_local.h m_bbox.h p_tick.h r_defs.h screen.h p_maputl.h \
  p_spec.h p_setup.h r_data.h r_state.h m_random.h s_sound.h w_wad.h \
- z_zone.h dstrings.h d_englsh.h r_main.h r_sky.h hardware/hw3sound.h \
- hardware/hws_data.h
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h z_zone.h dstrings.h d_englsh.h r_main.h r_sky.h \
+ hardware/hw3sound.h hardware/hws_data.h
 ../objs/SDL/Release/p_telept.o: p_telept.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
@@ -223,7 +292,12 @@
  d_netcmd.h command.h p_local.h m_bbox.h p_tick.h r_defs.h screen.h \
  p_maputl.h p_spec.h r_main.h r_data.h r_state.h s_sound.h r_things.h \
  i_sound.h r_sky.h p_setup.h m_random.h i_video.h r_splats.h z_zone.h \
- hardware/hw3sound.h hardware/hws_data.h
+ hardware/hw3sound.h hardware/hws_data.h hardware/hw_light.h \
+ hardware/hw_glob.h hardware/hw_defs.h hardware/../doomtype.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h \
+ hardware/hw_main.h
 ../objs/SDL/Release/r_bsp.o: r_bsp.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
@@ -235,14 +309,19 @@
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
  d_event.h i_video.h r_local.h screen.h m_bbox.h r_main.h r_data.h \
  r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h \
- r_draw.h p_local.h p_tick.h p_maputl.h p_spec.h w_wad.h z_zone.h \
- p_setup.h v_video.h
+ r_draw.h p_local.h p_tick.h p_maputl.h p_spec.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h z_zone.h p_setup.h v_video.h
 ../objs/SDL/Release/r_draw.o: r_draw.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h r_local.h \
  screen.h m_bbox.h r_main.h r_data.h r_defs.h r_state.h r_bsp.h r_segs.h \
  r_plane.h r_sky.h r_things.h r_draw.h st_stuff.h d_event.h i_video.h \
- v_video.h w_wad.h z_zone.h console.h r_draw8.c r_draw16.c
+ v_video.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h z_zone.h console.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../r_defs.h r_draw8.c r_draw16.c
 ../objs/SDL/Release/r_draw16.o: r_draw16.c
 ../objs/SDL/Release/r_draw8.o: r_draw8.c
 ../objs/SDL/Release/r_main.o: r_main.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
@@ -251,81 +330,115 @@
  d_event.h g_input.h keys.h r_local.h screen.h m_bbox.h r_main.h r_data.h \
  r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h \
  r_draw.h r_splats.h st_stuff.h p_local.h p_tick.h p_maputl.h p_spec.h \
- i_video.h m_menu.h am_map.h d_main.h w_wad.h
+ i_video.h m_menu.h am_map.h d_main.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_player.h \
+ hardware/../r_defs.h
 ../objs/SDL/Release/r_plane.o: r_plane.c doomdef.h doomtype.h g_state.h m_swap.h console.h \
  d_event.h g_game.h doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h \
  tables.h info.h d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h \
  d_netcmd.h command.h r_data.h r_defs.h screen.h r_state.h r_local.h \
  m_bbox.h r_main.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h r_draw.h \
- r_splats.h v_video.h w_wad.h z_zone.h p_setup.h
+ r_splats.h v_video.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h z_zone.h p_setup.h
 ../objs/SDL/Release/r_segs.o: r_segs.c doomdef.h doomtype.h g_state.h m_swap.h r_local.h \
  tables.h m_fixed.h screen.h command.h m_bbox.h r_main.h d_player.h \
  p_pspr.h info.h d_think.h sounds.h p_mobj.h doomdata.h d_ticcmd.h \
  r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h \
- r_things.h r_draw.h r_splats.h w_wad.h z_zone.h d_netcmd.h p_local.h \
- p_tick.h p_maputl.h p_spec.h console.h d_event.h
+ r_things.h r_draw.h r_splats.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h z_zone.h \
+ d_netcmd.h p_local.h p_tick.h p_maputl.h p_spec.h console.h d_event.h
 ../objs/SDL/Release/r_sky.o: r_sky.c doomdef.h doomtype.h g_state.h m_swap.h r_sky.h \
  m_fixed.h r_local.h tables.h screen.h command.h m_bbox.h r_main.h \
  d_player.h p_pspr.h info.h d_think.h sounds.h p_mobj.h doomdata.h \
  d_ticcmd.h r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h \
- r_things.h r_draw.h w_wad.h z_zone.h p_maputl.h
+ r_things.h r_draw.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h z_zone.h p_maputl.h
 ../objs/SDL/Release/r_splats.o: r_splats.c r_draw.h r_defs.h m_fixed.h doomtype.h d_think.h \
  p_mobj.h tables.h doomdata.h doomdef.h g_state.h m_swap.h info.h \
  sounds.h screen.h command.h r_main.h d_player.h p_pspr.h d_ticcmd.h \
- r_data.h r_state.h r_plane.h r_splats.h w_wad.h z_zone.h d_netcmd.h
+ r_data.h r_state.h r_plane.h r_splats.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h z_zone.h \
+ d_netcmd.h
 ../objs/SDL/Release/r_things.o: r_things.c doomdef.h doomtype.h g_state.h m_swap.h console.h \
  d_event.h g_game.h doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h \
  tables.h info.h d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h \
  d_netcmd.h command.h r_local.h screen.h m_bbox.h r_main.h r_data.h \
  r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h \
- r_draw.h st_stuff.h w_wad.h z_zone.h i_video.h p_tick.h
+ r_draw.h st_stuff.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h z_zone.h i_video.h p_tick.h
 ../objs/SDL/Release/s_sound.o: s_sound.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h g_game.h \
  d_event.h m_argv.h r_main.h r_data.h r_defs.h screen.h r_state.h \
- r_things.h i_sound.h s_sound.h w_wad.h z_zone.h d_main.h r_sky.h \
- p_local.h m_bbox.h p_tick.h p_maputl.h p_spec.h hardware/hw3sound.h \
- hardware/hws_data.h
+ r_things.h i_sound.h s_sound.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h z_zone.h \
+ d_main.h r_sky.h p_local.h m_bbox.h p_tick.h p_maputl.h p_spec.h \
+ hardware/hw3sound.h hardware/hws_data.h
 ../objs/SDL/Release/screen.o: screen.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h screen.h \
  console.h d_event.h am_map.h i_system.h i_video.h r_local.h m_bbox.h \
  r_main.h r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h \
  r_things.h r_draw.h m_argv.h v_video.h st_stuff.h hu_stuff.h w_wad.h \
- z_zone.h d_main.h f_finale.h
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h z_zone.h d_main.h f_finale.h
 ../objs/SDL/Release/sounds.o: sounds.c doomtype.h i_sound.h doomdef.h g_state.h m_swap.h \
  sounds.h command.h r_defs.h m_fixed.h d_think.h p_mobj.h tables.h \
- doomdata.h info.h screen.h r_things.h z_zone.h w_wad.h
+ doomdata.h info.h screen.h r_things.h z_zone.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h
 ../objs/SDL/Release/st_stuff.o: st_stuff.c doomdef.h doomtype.h g_state.h m_swap.h g_game.h \
  doomstat.h doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h \
  d_think.h sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h \
  d_event.h r_local.h screen.h m_bbox.h r_main.h r_data.h r_defs.h \
  r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h r_things.h r_draw.h \
  p_local.h p_tick.h p_maputl.h p_spec.h f_finale.h st_stuff.h i_video.h \
- v_video.h z_zone.h hu_stuff.h w_wad.h s_sound.h i_system.h m_menu.h
+ v_video.h z_zone.h hu_stuff.h w_wad.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/hw_glide.h hardware/../screen.h s_sound.h \
+ i_system.h m_menu.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h
 ../objs/SDL/Release/tables.o: tables.c tables.h m_fixed.h doomtype.h
 ../objs/SDL/Release/v_video.o: v_video.c doomdef.h doomtype.h g_state.h m_swap.h r_local.h \
  tables.h m_fixed.h screen.h command.h m_bbox.h r_main.h d_player.h \
  p_pspr.h info.h d_think.h sounds.h p_mobj.h doomdata.h d_ticcmd.h \
  r_data.h r_defs.h r_state.h r_bsp.h r_segs.h r_plane.h r_sky.h \
- r_things.h r_draw.h v_video.h hu_stuff.h d_event.h w_wad.h console.h \
- i_video.h z_zone.h doomstat.h d_clisrv.h d_netcmd.h
-../objs/SDL/Release/w_wad.o: w_wad.c doomdef.h doomtype.h g_state.h m_swap.h w_wad.h z_zone.h \
- i_video.h d_netfil.h dehacked.h r_defs.h m_fixed.h d_think.h p_mobj.h \
- tables.h doomdata.h info.h sounds.h screen.h command.h i_system.h \
- d_ticcmd.h d_event.h md5.h
+ r_things.h r_draw.h v_video.h hu_stuff.h d_event.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h console.h i_video.h z_zone.h doomstat.h d_clisrv.h \
+ d_netcmd.h hardware/hw_glob.h hardware/hw_defs.h hardware/../doomtype.h \
+ hardware/hw_main.h hardware/hw_data.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../r_defs.h
+../objs/SDL/Release/w_wad.o: w_wad.c doomdef.h doomtype.h g_state.h m_swap.h w_wad.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h hardware/../doomtype.h \
+ z_zone.h i_video.h d_netfil.h dehacked.h r_defs.h m_fixed.h d_think.h \
+ p_mobj.h tables.h doomdata.h info.h sounds.h screen.h i_system.h \
+ d_ticcmd.h d_event.h md5.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../p_pspr.h \
+ hardware/../m_fixed.h hardware/../tables.h hardware/../info.h \
+ hardware/../p_mobj.h hardware/../d_ticcmd.h hardware/../r_defs.h
 ../objs/SDL/Release/y_inter.o: y_inter.c doomdef.h doomtype.h g_state.h m_swap.h doomstat.h \
  doomdata.h d_player.h p_pspr.h m_fixed.h tables.h info.h d_think.h \
  sounds.h p_mobj.h d_ticcmd.h d_clisrv.h d_netcmd.h command.h d_main.h \
- d_event.h w_wad.h f_finale.h g_game.h hu_stuff.h r_defs.h screen.h \
- i_net.h i_video.h p_tick.h r_things.h s_sound.h st_stuff.h v_video.h \
- y_inter.h z_zone.h r_local.h m_bbox.h r_main.h r_data.h r_state.h \
- r_bsp.h r_segs.h r_plane.h r_sky.h r_draw.h p_local.h p_maputl.h \
- p_spec.h
+ d_event.h w_wad.h hardware/hw_data.h hardware/../doomdef.h \
+ hardware/hw_glide.h hardware/../screen.h hardware/../command.h \
+ f_finale.h g_game.h hu_stuff.h r_defs.h screen.h i_net.h i_video.h \
+ p_tick.h r_things.h s_sound.h st_stuff.h v_video.h y_inter.h z_zone.h \
+ r_local.h m_bbox.h r_main.h r_data.h r_state.h r_bsp.h r_segs.h \
+ r_plane.h r_sky.h r_draw.h p_local.h p_maputl.h p_spec.h
 ../objs/SDL/Release/z_zone.o: z_zone.c doomdef.h doomtype.h g_state.h m_swap.h z_zone.h \
  i_system.h d_ticcmd.h m_fixed.h d_event.h command.h m_argv.h i_video.h \
  doomstat.h doomdata.h d_player.h p_pspr.h tables.h info.h d_think.h \
- sounds.h p_mobj.h d_clisrv.h d_netcmd.h
+ sounds.h p_mobj.h d_clisrv.h d_netcmd.h hardware/hw_main.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../r_defs.h hardware/../m_fixed.h \
+ hardware/../d_think.h hardware/../p_mobj.h hardware/../screen.h
 ../objs/SDL/Release/IMG_xpm.o: sdl/IMG_xpm.c
 ../objs/SDL/Release/dosstr.o: sdl/dosstr.c sdl/../doomstat.h sdl/../doomdata.h \
  sdl/../doomtype.h sdl/../doomdef.h sdl/../g_state.h sdl/../m_swap.h \
@@ -333,20 +446,78 @@
  sdl/../info.h sdl/../d_think.h sdl/../sounds.h sdl/../p_mobj.h \
  sdl/../d_ticcmd.h sdl/../d_clisrv.h sdl/../d_netcmd.h sdl/../command.h
 ../objs/SDL/Release/endtxt.o: sdl/endtxt.c sdl/../doomdef.h sdl/../doomtype.h \
- sdl/../g_state.h sdl/../m_swap.h sdl/../w_wad.h sdl/../z_zone.h \
- sdl/endtxt.h
+ sdl/../g_state.h sdl/../m_swap.h sdl/../w_wad.h \
+ sdl/../hardware/hw_data.h sdl/../hardware/../doomdef.h \
+ sdl/../hardware/hw_glide.h sdl/../hardware/../screen.h \
+ sdl/../hardware/../command.h sdl/../hardware/../doomtype.h \
+ sdl/../z_zone.h sdl/endtxt.h
 ../objs/SDL/Release/hwsym_sdl.o: sdl/hwsym_sdl.c sdl/hwsym_sdl.h sdl/../doomdef.h \
  sdl/../doomtype.h sdl/../g_state.h sdl/../m_swap.h \
- sdl/../hardware/hw3dsdrv.h sdl/../hardware/hw_dll.h \
- sdl/../hardware/hws_data.h
+ sdl/../hardware/hw_drv.h sdl/../hardware/../screen.h \
+ sdl/../hardware/../command.h sdl/../hardware/../doomtype.h \
+ sdl/../hardware/hw_data.h sdl/../hardware/../doomdef.h \
+ sdl/../hardware/hw_glide.h sdl/../hardware/hw_defs.h \
+ sdl/../hardware/../doomtype.h sdl/../hardware/hw_md2.h \
+ sdl/../hardware/hw_glob.h sdl/../hardware/hw_main.h \
+ sdl/../hardware/../am_map.h sdl/../hardware/../d_event.h \
+ sdl/../hardware/../g_state.h sdl/../hardware/../d_player.h \
+ sdl/../hardware/../p_pspr.h sdl/../hardware/../m_fixed.h \
+ sdl/../hardware/../tables.h sdl/../hardware/../info.h \
+ sdl/../hardware/../d_think.h sdl/../hardware/../sounds.h \
+ sdl/../hardware/../p_mobj.h sdl/../hardware/../doomdata.h \
+ sdl/../hardware/../doomdef.h sdl/../hardware/../d_ticcmd.h \
+ sdl/../hardware/../r_defs.h sdl/../hardware/../screen.h \
+ sdl/../hardware/hw_dll.h sdl/ogl_sdl.h sdl/../v_video.h sdl/../doomdef.h \
+ sdl/../r_defs.h sdl/../hardware/hw3dsdrv.h sdl/../hardware/hws_data.h
 ../objs/SDL/Release/i_cdmus.o: sdl/i_cdmus.c sdl/../doomtype.h sdl/../i_sound.h \
  sdl/../doomdef.h sdl/../doomtype.h sdl/../g_state.h sdl/../m_swap.h \
  sdl/../sounds.h sdl/../command.h sdl/../command.h sdl/../m_argv.h \
  sdl/../s_sound.h
 ../objs/SDL/Release/i_main.o: sdl/i_main.c sdl/../doomdef.h sdl/../doomtype.h \
  sdl/../g_state.h sdl/../m_swap.h sdl/../m_argv.h sdl/../d_main.h \
- sdl/../d_event.h sdl/../w_wad.h sdl/../i_system.h sdl/../d_ticcmd.h \
- sdl/../m_fixed.h
+ sdl/../d_event.h sdl/../w_wad.h sdl/../hardware/hw_data.h \
+ sdl/../hardware/../doomdef.h sdl/../hardware/hw_glide.h \
+ sdl/../hardware/../screen.h sdl/../hardware/../command.h \
+ sdl/../hardware/../doomtype.h sdl/../i_system.h sdl/../d_ticcmd.h \
+ sdl/../m_fixed.h /usr/local/pspdev/psp/sdk/include/pspkernel.h \
+ /usr/local/pspdev/psp/sdk/include/pspuser.h \
+ /usr/local/pspdev/psp/sdk/include/psptypes.h \
+ /usr/local/pspdev/psp/sdk/include/pspkerneltypes.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr_fcntl.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr_stat.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr_dirent.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr_devctl.h \
+ /usr/local/pspdev/psp/sdk/include/psploadexec.h \
+ /usr/local/pspdev/psp/sdk/include/pspmoduleinfo.h \
+ /usr/local/pspdev/psp/sdk/include/pspmodulemgr.h \
+ /usr/local/pspdev/psp/sdk/include/pspsysmem.h \
+ /usr/local/pspdev/psp/sdk/include/pspthreadman.h \
+ /usr/local/pspdev/psp/sdk/include/pspdebug.h \
+ /usr/local/pspdev/psp/sdk/include/psputils.h \
+ /usr/local/pspdev/psp/sdk/include/pspkerror.h \
+ /usr/local/pspdev/psp/sdk/include/pspstdio.h \
+ /usr/local/pspdev/psp/sdk/include/pspintrman.h \
+ /usr/local/pspdev/psp/sdk/include/pspiofilemgr_kernel.h \
+ /usr/local/pspdev/psp/sdk/include/psploadcore.h \
+ /usr/local/pspdev/psp/sdk/include/pspstdio_kernel.h \
+ /usr/local/pspdev/psp/sdk/include/pspsysreg.h \
+ /usr/local/pspdev/psp/sdk/include/pspkdebug.h \
+ /usr/local/pspdev/psp/sdk/include/pspintrman_kernel.h \
+ /usr/local/pspdev/psp/sdk/include/pspmodulemgr_kernel.h \
+ /usr/local/pspdev/psp/sdk/include/psputility.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_msgdialog.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_netconf.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_netparam.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_savedata.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_gamesharing.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_htmlviewer.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_sysparam.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_osk.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_netmodules.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_avmodules.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_usbmodules.h \
+ /usr/local/pspdev/psp/sdk/include/psputility_modules.h
 ../objs/SDL/Release/i_net.o: sdl/i_net.c sdl/../doomdef.h sdl/../doomtype.h sdl/../g_state.h \
  sdl/../m_swap.h sdl/../i_system.h sdl/../d_ticcmd.h sdl/../m_fixed.h \
  sdl/../d_event.h sdl/../d_event.h sdl/../d_net.h sdl/../m_argv.h \
@@ -358,22 +529,28 @@
  sdl/../m_swap.h sdl/../i_system.h sdl/../d_ticcmd.h sdl/../m_fixed.h \
  sdl/../doomtype.h sdl/../d_event.h sdl/../g_state.h sdl/../i_sound.h \
  sdl/../doomdef.h sdl/../m_swap.h sdl/../sounds.h sdl/../command.h \
- sdl/../m_argv.h sdl/../m_misc.h sdl/../w_wad.h sdl/../w_wad.h \
+ sdl/../m_argv.h sdl/../m_misc.h sdl/../w_wad.h sdl/../hardware/hw_data.h \
+ sdl/../hardware/../doomdef.h sdl/../hardware/hw_glide.h \
+ sdl/../hardware/../screen.h sdl/../hardware/../command.h sdl/../w_wad.h \
  sdl/../screen.h sdl/../doomdef.h sdl/../doomstat.h sdl/../doomdata.h \
  sdl/../d_player.h sdl/../p_pspr.h sdl/../tables.h sdl/../info.h \
  sdl/../d_think.h sdl/../p_mobj.h sdl/../d_clisrv.h sdl/../d_netcmd.h \
  sdl/../s_sound.h sdl/../d_main.h sdl/../hardware/hw3dsdrv.h \
  sdl/../hardware/hw_dll.h sdl/../hardware/hws_data.h \
  sdl/../hardware/hw3sound.h sdl/hwsym_sdl.h
-../objs/SDL/Release/i_system.o: sdl/i_system.c sdl/../doomdef.h sdl/../doomtype.h \
- sdl/../g_state.h sdl/../m_swap.h sdl/../m_misc.h sdl/../w_wad.h \
- sdl/../i_video.h sdl/../i_sound.h sdl/../doomdef.h sdl/../sounds.h \
- sdl/../command.h sdl/../i_system.h sdl/../d_ticcmd.h sdl/../m_fixed.h \
- sdl/../d_event.h sdl/../screen.h sdl/../d_net.h sdl/../g_game.h \
- sdl/../doomstat.h sdl/../doomdata.h sdl/../d_player.h sdl/../p_pspr.h \
- sdl/../tables.h sdl/../info.h sdl/../d_think.h sdl/../p_mobj.h \
- sdl/../d_clisrv.h sdl/../d_netcmd.h sdl/endtxt.h sdl/../i_joy.h \
- sdl/../g_input.h sdl/../keys.h sdl/../m_argv.h sdl/../d_main.h
+../objs/SDL/Release/i_system.o: sdl/i_system.c /usr/local/pspdev/psp/sdk/include/pspctrl.h \
+ sdl/../doomdef.h sdl/../doomtype.h sdl/../g_state.h sdl/../m_swap.h \
+ sdl/../m_misc.h sdl/../w_wad.h sdl/../hardware/hw_data.h \
+ sdl/../hardware/../doomdef.h sdl/../hardware/hw_glide.h \
+ sdl/../hardware/../screen.h sdl/../hardware/../command.h \
+ sdl/../hardware/../doomtype.h sdl/../i_video.h sdl/../i_sound.h \
+ sdl/../doomdef.h sdl/../sounds.h sdl/../command.h sdl/../i_system.h \
+ sdl/../d_ticcmd.h sdl/../m_fixed.h sdl/../d_event.h sdl/../screen.h \
+ sdl/../d_net.h sdl/../g_game.h sdl/../doomstat.h sdl/../doomdata.h \
+ sdl/../d_player.h sdl/../p_pspr.h sdl/../tables.h sdl/../info.h \
+ sdl/../d_think.h sdl/../p_mobj.h sdl/../d_clisrv.h sdl/../d_netcmd.h \
+ sdl/endtxt.h sdl/../i_joy.h sdl/../g_input.h sdl/../keys.h \
+ sdl/../m_argv.h sdl/../d_main.h
 ../objs/SDL/Release/i_video.o: sdl/i_video.c sdl/../doomdef.h sdl/../doomtype.h \
  sdl/../g_state.h sdl/../m_swap.h sdl/../doomstat.h sdl/../doomdata.h \
  sdl/../doomdef.h sdl/../d_player.h sdl/../p_pspr.h sdl/../m_fixed.h \
@@ -381,10 +558,19 @@
  sdl/../p_mobj.h sdl/../d_ticcmd.h sdl/../d_clisrv.h sdl/../d_netcmd.h \
  sdl/../command.h sdl/../i_system.h sdl/../d_event.h sdl/../v_video.h \
  sdl/../r_defs.h sdl/../screen.h sdl/../m_argv.h sdl/../m_menu.h \
- sdl/../d_main.h sdl/../w_wad.h sdl/../s_sound.h sdl/../i_sound.h \
+ sdl/../d_main.h sdl/../w_wad.h sdl/../hardware/hw_data.h \
+ sdl/../hardware/../doomdef.h sdl/../hardware/hw_glide.h \
+ sdl/../hardware/../screen.h sdl/../s_sound.h sdl/../i_sound.h \
  sdl/../g_input.h sdl/../keys.h sdl/../st_stuff.h sdl/../g_game.h \
  sdl/../doomstat.h sdl/../i_video.h sdl/../console.h sdl/../command.h \
- sdl/IMG_xpm.c sdl/SDL_icon.xpm
+ sdl/../hardware/hw_main.h sdl/../hardware/hw_data.h \
+ sdl/../hardware/hw_defs.h sdl/../hardware/../doomtype.h \
+ sdl/../hardware/../am_map.h sdl/../hardware/../d_event.h \
+ sdl/../hardware/../d_player.h sdl/../hardware/../r_defs.h \
+ sdl/../hardware/hw_drv.h sdl/../hardware/hw_md2.h \
+ sdl/../hardware/hw_glob.h sdl/../hardware/hw_main.h \
+ sdl/../hardware/hw_dll.h sdl/hwsym_sdl.h sdl/ogl_sdl.h sdl/IMG_xpm.c \
+ sdl/SDL_icon.xpm
 ../objs/SDL/Release/ogl_sdl.o: sdl/ogl_sdl.c sdl/../doomdef.h sdl/../doomtype.h \
  sdl/../g_state.h sdl/../m_swap.h sdl/../hardware/r_opengl/r_opengl.h \
  sdl/../hardware/r_opengl/../../doomdef.h \
@@ -419,3 +605,135 @@
  sdl/../hardware/r_opengl/../hw_dll.h sdl/ogl_sdl.h sdl/../v_video.h \
  sdl/../doomdef.h sdl/../r_defs.h sdl/../i_system.h sdl/../d_ticcmd.h \
  sdl/../d_event.h
+../objs/SDL/Release/hw3sound.o: hardware/hw3sound.c hardware/../doomdef.h \
+ hardware/../doomtype.h hardware/../g_state.h hardware/../m_swap.h \
+ hardware/../i_sound.h hardware/../doomdef.h hardware/../sounds.h \
+ hardware/../command.h hardware/../s_sound.h hardware/../w_wad.h \
+ hardware/../hardware/hw_data.h hardware/../hardware/../doomdef.h \
+ hardware/../hardware/hw_glide.h hardware/../hardware/../screen.h \
+ hardware/../hardware/../command.h hardware/../z_zone.h \
+ hardware/../g_game.h hardware/../doomstat.h hardware/../doomdata.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../p_mobj.h hardware/../d_ticcmd.h hardware/../d_clisrv.h \
+ hardware/../d_netcmd.h hardware/../d_event.h hardware/../tables.h \
+ hardware/../sounds.h hardware/../r_main.h hardware/../r_data.h \
+ hardware/../r_defs.h hardware/../screen.h hardware/../r_state.h \
+ hardware/../r_things.h hardware/../m_random.h hardware/../p_local.h \
+ hardware/../m_bbox.h hardware/../p_tick.h hardware/../p_maputl.h \
+ hardware/../p_spec.h hardware/hw3dsdrv.h hardware/hw_dll.h \
+ hardware/hws_data.h hardware/hw3sound.h
+../objs/SDL/Release/hw_bsp.o: hardware/hw_bsp.c hardware/hw_glob.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../doomtype.h hardware/../g_state.h \
+ hardware/../m_swap.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../sounds.h hardware/../p_mobj.h hardware/../doomdata.h \
+ hardware/../doomdef.h hardware/../d_ticcmd.h hardware/../r_defs.h \
+ hardware/../screen.h hardware/../r_local.h hardware/../m_bbox.h \
+ hardware/../r_main.h hardware/../d_player.h hardware/../r_data.h \
+ hardware/../r_defs.h hardware/../r_state.h hardware/../r_bsp.h \
+ hardware/../r_segs.h hardware/../r_plane.h hardware/../r_sky.h \
+ hardware/../r_things.h hardware/../r_draw.h hardware/../z_zone.h \
+ hardware/../console.h hardware/../v_video.h hardware/../m_menu.h \
+ hardware/../i_system.h hardware/../m_argv.h hardware/../i_video.h
+../objs/SDL/Release/hw_cache.o: hardware/hw_cache.c hardware/hw_glob.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../doomtype.h hardware/../g_state.h \
+ hardware/../m_swap.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../sounds.h hardware/../p_mobj.h hardware/../doomdata.h \
+ hardware/../doomdef.h hardware/../d_ticcmd.h hardware/../r_defs.h \
+ hardware/../screen.h hardware/hw_drv.h hardware/hw_md2.h \
+ hardware/hw_dll.h hardware/../doomstat.h hardware/../d_player.h \
+ hardware/../d_clisrv.h hardware/../d_netcmd.h hardware/../i_video.h \
+ hardware/../r_data.h hardware/../r_defs.h hardware/../r_state.h \
+ hardware/../r_data.h hardware/../w_wad.h hardware/../hardware/hw_data.h \
+ hardware/../z_zone.h hardware/../v_video.h hardware/../r_draw.h
+../objs/SDL/Release/hw_draw.o: hardware/hw_draw.c hardware/hw_glob.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../doomtype.h hardware/../g_state.h \
+ hardware/../m_swap.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../sounds.h hardware/../p_mobj.h hardware/../doomdata.h \
+ hardware/../doomdef.h hardware/../d_ticcmd.h hardware/../r_defs.h \
+ hardware/../screen.h hardware/hw_drv.h hardware/hw_md2.h \
+ hardware/hw_dll.h hardware/../m_misc.h hardware/../w_wad.h \
+ hardware/../hardware/hw_data.h hardware/../r_draw.h hardware/../r_defs.h \
+ hardware/../r_main.h hardware/../d_player.h hardware/../r_data.h \
+ hardware/../r_state.h hardware/../w_wad.h hardware/../z_zone.h \
+ hardware/../v_video.h hardware/../st_stuff.h hardware/../i_video.h
+../objs/SDL/Release/hw_light.o: hardware/hw_light.c hardware/hw_light.h hardware/hw_glob.h \
+ hardware/hw_defs.h hardware/../doomtype.h hardware/hw_main.h \
+ hardware/hw_data.h hardware/../doomdef.h hardware/../doomtype.h \
+ hardware/../g_state.h hardware/../m_swap.h hardware/hw_glide.h \
+ hardware/../screen.h hardware/../command.h hardware/../am_map.h \
+ hardware/../d_event.h hardware/../d_player.h hardware/../p_pspr.h \
+ hardware/../m_fixed.h hardware/../tables.h hardware/../info.h \
+ hardware/../d_think.h hardware/../sounds.h hardware/../p_mobj.h \
+ hardware/../doomdata.h hardware/../doomdef.h hardware/../d_ticcmd.h \
+ hardware/../r_defs.h hardware/../screen.h hardware/hw_drv.h \
+ hardware/hw_md2.h hardware/hw_dll.h hardware/../i_video.h \
+ hardware/../z_zone.h hardware/../m_random.h hardware/../m_bbox.h \
+ hardware/../w_wad.h hardware/../hardware/hw_data.h hardware/../r_state.h \
+ hardware/../d_player.h hardware/../r_data.h hardware/../r_defs.h \
+ hardware/../r_state.h hardware/../r_main.h hardware/../p_local.h \
+ hardware/../m_bbox.h hardware/../p_tick.h hardware/../p_maputl.h \
+ hardware/../p_spec.h
+../objs/SDL/Release/hw_main.o: hardware/hw_main.c hardware/hw_glob.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../doomtype.h hardware/../g_state.h \
+ hardware/../m_swap.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../sounds.h hardware/../p_mobj.h hardware/../doomdata.h \
+ hardware/../doomdef.h hardware/../d_ticcmd.h hardware/../r_defs.h \
+ hardware/../screen.h hardware/hw_light.h hardware/hw_drv.h \
+ hardware/hw_md2.h hardware/hw_dll.h hardware/../doomstat.h \
+ hardware/../d_player.h hardware/../d_clisrv.h hardware/../d_netcmd.h \
+ hardware/../i_video.h hardware/../v_video.h hardware/../r_defs.h \
+ hardware/../p_local.h hardware/../m_bbox.h hardware/../p_tick.h \
+ hardware/../p_maputl.h hardware/../p_spec.h hardware/../p_setup.h \
+ hardware/../r_local.h hardware/../r_main.h hardware/../r_data.h \
+ hardware/../r_state.h hardware/../r_bsp.h hardware/../r_segs.h \
+ hardware/../r_plane.h hardware/../r_sky.h hardware/../r_things.h \
+ hardware/../r_draw.h hardware/../r_bsp.h hardware/../d_clisrv.h \
+ hardware/../w_wad.h hardware/../hardware/hw_data.h hardware/../z_zone.h \
+ hardware/../r_splats.h hardware/../g_game.h hardware/../doomstat.h \
+ hardware/../st_stuff.h
+../objs/SDL/Release/hw_md2.o: hardware/hw_md2.c hardware/hw_drv.h hardware/../screen.h \
+ hardware/../command.h hardware/../doomtype.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../g_state.h hardware/../m_swap.h \
+ hardware/hw_glide.h hardware/hw_defs.h hardware/../doomtype.h \
+ hardware/hw_md2.h hardware/hw_glob.h hardware/hw_main.h \
+ hardware/../am_map.h hardware/../d_event.h hardware/../d_player.h \
+ hardware/../p_pspr.h hardware/../m_fixed.h hardware/../tables.h \
+ hardware/../info.h hardware/../d_think.h hardware/../sounds.h \
+ hardware/../p_mobj.h hardware/../doomdata.h hardware/../doomdef.h \
+ hardware/../d_ticcmd.h hardware/../r_defs.h hardware/../screen.h \
+ hardware/hw_dll.h hardware/hw_light.h hardware/../r_main.h \
+ hardware/../d_player.h hardware/../r_data.h hardware/../r_defs.h \
+ hardware/../r_state.h hardware/../w_wad.h hardware/../hardware/hw_data.h \
+ hardware/../z_zone.h
+../objs/SDL/Release/hw_trick.o: hardware/hw_trick.c hardware/hw_glob.h hardware/hw_defs.h \
+ hardware/../doomtype.h hardware/hw_main.h hardware/hw_data.h \
+ hardware/../doomdef.h hardware/../doomtype.h hardware/../g_state.h \
+ hardware/../m_swap.h hardware/hw_glide.h hardware/../screen.h \
+ hardware/../command.h hardware/../am_map.h hardware/../d_event.h \
+ hardware/../d_player.h hardware/../p_pspr.h hardware/../m_fixed.h \
+ hardware/../tables.h hardware/../info.h hardware/../d_think.h \
+ hardware/../sounds.h hardware/../p_mobj.h hardware/../doomdata.h \
+ hardware/../doomdef.h hardware/../d_ticcmd.h hardware/../r_defs.h \
+ hardware/../screen.h hardware/hw_dll.h hardware/../r_local.h \
+ hardware/../m_bbox.h hardware/../r_main.h hardware/../d_player.h \
+ hardware/../r_data.h hardware/../r_defs.h hardware/../r_state.h \
+ hardware/../r_bsp.h hardware/../r_segs.h hardware/../r_plane.h \
+ hardware/../r_sky.h hardware/../r_things.h hardware/../r_draw.h \
+ hardware/../i_system.h
