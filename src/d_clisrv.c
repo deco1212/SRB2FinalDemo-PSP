@@ -668,7 +668,7 @@ static void CL_ConnectToServer(void)
 			case cl_searching:
 
 #ifdef PSP
-                // --- DEFINITIVE V1.09.4 NATIVE ENGINE OVERRIDE ---
+                // --- DEFINITIVE STANDALONE NATIVE LEVEL SETUP GATE ---
                 server = true;
                 serverrunning = true;
                 netgame = false;     
@@ -684,14 +684,23 @@ static void CL_ConnectToServer(void)
                 playeringame[0] = true; 
                 doomcom->numplayers = 1;
                 
-                // 1. Shift the engine status flags to level gameplay mode
+                // 1. ABSOLUTE CRASH FIX: Forcefully initialize player profile data structures!
+                //    This completely wipes the PST_DEAD flags and sets standard startup numbers.
+                memset(&players[0], 0, sizeof(player_t));
+                players[0].playerstate = PST_LIVE; // Forces structural life tracking to active
+                players[0].skincolor = 1; // Index 1 restores Sonic's true native blue rendering profile!
+                players[0].lives = 3;              // Set starter lives counter array size
+                players[0].health = 1;             // Assign baseline structure health
+                
+                // 2. Shift the engine status layout flags to full active level gameplay
                 gamestate = GS_LEVEL; 
-
+                
+                // 3. Executes the verified 4-argument immediate map constructor safely:
                 G_InitNew(sk_medium, "MAP01", 0, false);
                 
-                // 4. Force execution cleanly out of this net synchronization do-while block frame
-                goto psp_bypass_net_loop;
+                return;
 #endif
+
 
 
 
