@@ -505,73 +505,66 @@ void I_GetJoystickEvents(void)
         psp_input_initialized = 1;
     }
 
-    // --- GLOBAL VECTOR LINKAGE: Accessing the master exposed game frame variables ---
+    // --- GLOBAL VECTOR LINKAGE: Exposed game engine frame parameters ---
     extern ticcmd_t netcmds[BACKUPTICS][MAXPLAYERS];
-    extern tic_t gametic; // Fully exported global engine frame index tracker
+    extern tic_t gametic; 
 
-    // 2. Persistent state trackers to filter out duplicate held events
-    static unsigned int last_buttons = 0;
     SceCtrlData pad;
 
     if (sceCtrlReadBufferPositive(&pad, 1) >= 0) {
         event_t event;
-        unsigned int changed = pad.Buttons ^ last_buttons;
-        int active_tic = gametic % BACKUPTICS; // Maps perfectly into the active frame loop slot
+        int active_tic = gametic % BACKUPTICS;
 
-        // --- CORE EVENT POSTING ENGINE (For Crisp Menus & Text UI Layouts) ---
+        // --- FIXED MENU EVENT POSTING ENGINE (Stripped of the broken changed mask) ---
+        // This ensures the menus immediately listen to the active physical button states
         
-        // START BUTTON
-        if (changed & PSP_CTRL_START) {
-            event.type = (pad.Buttons & PSP_CTRL_START) ? ev_keydown : ev_keyup;
+        // START BUTTON (Menu Confirm / Advance)
+        if (pad.Buttons & PSP_CTRL_START) {
+            event.type = ev_keydown;
+            event.data1 = KEY_ENTER;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
             event.data1 = KEY_ENTER;
             D_PostEvent(&event);
         }
 
-        // CROSS BUTTON (JUMP)
-        if (changed & PSP_CTRL_CROSS) {
-            event.type = (pad.Buttons & PSP_CTRL_CROSS) ? ev_keydown : ev_keyup;
-            event.data1 = KEY_SPACE;
+        // SELECT BUTTON (Menu Back / Cancel / Escape)
+        if (pad.Buttons & PSP_CTRL_SELECT) {
+            event.type = ev_keydown;
+            event.data1 = KEY_ESCAPE;
             D_PostEvent(&event);
-        }
-
-        // D-PAD DOWN
-        if (changed & PSP_CTRL_DOWN) {
-            event.type = (pad.Buttons & PSP_CTRL_DOWN) ? ev_keydown : ev_keyup;
-            event.data1 = KEY_DOWNARROW;
-            D_PostEvent(&event);
-        }
-
-        // D-PAD UP
-        if (changed & PSP_CTRL_UP) {
-            event.type = (pad.Buttons & PSP_CTRL_UP) ? ev_keydown : ev_keyup;
-            event.data1 = KEY_UPARROW;
-            D_PostEvent(&event);
-        }
-
-        // D-PAD LEFT
-        if (changed & PSP_CTRL_LEFT) {
-            event.type = (pad.Buttons & PSP_CTRL_LEFT) ? ev_keydown : ev_keyup;
-            event.data1 = KEY_LEFTARROW;
-            D_PostEvent(&event);
-        }
-
-        // D-PAD RIGHT
-        if (changed & PSP_CTRL_RIGHT) {
-            event.type = (pad.Buttons & PSP_CTRL_RIGHT) ? ev_keydown : ev_keyup;
-            event.data1 = KEY_RIGHTARROW;
-            D_PostEvent(&event);
-        }
-
-        // SELECT BUTTON
-        if (changed & PSP_CTRL_SELECT) {
-            event.type = (pad.Buttons & PSP_CTRL_SELECT) ? ev_keydown : ev_keyup;
+        } else {
+            event.type = ev_keyup;
             event.data1 = KEY_ESCAPE;
             D_PostEvent(&event);
         }
 
+        // D-PAD UP (Menu Navigation Up)
+        if (pad.Buttons & PSP_CTRL_UP) {
+            event.type = ev_keydown;
+            event.data1 = KEY_UPARROW;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_UPARROW;
+            D_PostEvent(&event);
+        }
 
-        // --- DIRECT GAMEPLAY BUFFER INJECTION (Bypasses the Frame Erasure Bug) ---
-        // Writes physical data straight to player slot 0 using the fully visible gametic slots:
+        // D-PAD DOWN (Menu Navigation Down)
+        if (pad.Buttons & PSP_CTRL_DOWN) {
+            event.type = ev_keydown;
+            event.data1 = KEY_DOWNARROW;
+            D_PostEvent(&event);
+        } else {
+            event.type = ev_keyup;
+            event.data1 = KEY_DOWNARROW;
+            D_PostEvent(&event);
+        }
+
+
+        // --- DIRECT GAMEPLAY BUFFER INJECTION ---
+        // Keeps continuous physics velocity arrays tracking cleanly for Player 0
         
         // 3D Forward / Reverse Velocity Values
         if (pad.Buttons & PSP_CTRL_UP)         netcmds[active_tic][0].forwardmove = 50;
@@ -583,21 +576,24 @@ void I_GetJoystickEvents(void)
         else if (pad.Buttons & PSP_CTRL_LEFT)   netcmds[active_tic][0].angleturn = 1200;
         else                                   netcmds[active_tic][0].angleturn = 0;
 
-        // Physical Jump Flag Registration
-        if (pad.Buttons & PSP_CTRL_CROSS)       netcmds[active_tic][0].buttons |= BT_JUMP;
-        else                                    netcmds[active_tic][0].buttons &= ~BT_JUMP;
+        // Reset the gameplay action flags by default every frame tick loop
+        netcmds[active_tic][0].buttons = 0;
 
-        // Physical Spin Dash Flag Registration (Square Button)
-        if (pad.Buttons & PSP_CTRL_SQUARE)      netcmds[active_tic][0].buttons |= BT_USE;
-        else                                    netcmds[active_tic][0].buttons &= ~BT_USE;
+        // Direct button flag mappings to prevent rapid-fire thok loops
+        if (pad.Buttons & PSP_CTRL_CROSS) {
+            netcmds[active_tic][0].buttons = BT_JUMP;
+        }
+        else if (pad.Buttons & PSP_CTRL_SQUARE) {
+            netcmds[active_tic][0].buttons = BT_USE;
+        }
 
         // Force a flag bit to tell the physics engine this command array is fully updated!
         netcmds[active_tic][0].angleturn |= TICCMD_RECEIVED;
-
-        // Cache the current button signature profile for the next frame tick comparison
-        last_buttons = pad.Buttons;
     }
 #endif
+
+
+
 
 
 
